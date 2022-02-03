@@ -1,10 +1,21 @@
+// Packages
 import React, { useState } from "react";
 
 const App: React.FC = () => {
   // -------------------------------------------------
   // State
   // -------------------------------------------------
+
   const [search, setSearch] = useState("");
+
+  // -------------------------------------------------
+  // Functions
+  // -------------------------------------------------
+
+  const handleSearch = () => {
+
+  }
+
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
@@ -12,7 +23,7 @@ const App: React.FC = () => {
     <div>
       <h1>Search</h1>
 
-      <form>
+      <form onSubmit={handleSearch}>
         <input
           type="text"
           value={search}
