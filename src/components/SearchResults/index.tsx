@@ -1,5 +1,6 @@
 // Packages
 import React from "react";
+import ProductItem from "../ProductItem";
 
 interface ISearchResultsProps {
   results: Array<{
@@ -14,14 +15,12 @@ const SearchResults: React.FC<ISearchResultsProps> = ({ results }) => {
   // Render
   // -------------------------------------------------
   return (
-      <div>
-          { results.map(product => {
-              return (
-                  <h1>x</h1>
-              )
-          }) }
-      </div>
-  )
+    <div>
+      {results.map((product) => {
+        return <ProductItem product={product} />;
+      })}
+    </div>
+  );
 };
 
 export default SearchResults;
