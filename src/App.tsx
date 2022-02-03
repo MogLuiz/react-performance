@@ -1,5 +1,6 @@
 // Packages
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
+import SearchResults from "./components/SearchResults";
 
 const App: React.FC = () => {
   // -------------------------------------------------
@@ -7,14 +8,22 @@ const App: React.FC = () => {
   // -------------------------------------------------
 
   const [search, setSearch] = useState("");
+  const [searchResult, setSearchResult] = useState([]);
 
   // -------------------------------------------------
   // Functions
   // -------------------------------------------------
 
-  const handleSearch = () => {
+  const handleSearch = async (event: FormEvent) => {
+    event.preventDefault();
 
-  }
+    if (!search.trim()) return;
+
+    const response = await fetch(`http://localhost:3333/products?q=${search}`);
+    const data = await response.json();
+
+    setSearchResult(data);
+  };
 
   // -------------------------------------------------
   // Render
@@ -30,6 +39,8 @@ const App: React.FC = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </form>
+
+      <SearchResults results={searchResult}/>
     </div>
   );
 };
