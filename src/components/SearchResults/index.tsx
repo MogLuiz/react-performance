@@ -1,5 +1,5 @@
 // Packages
-import React from "react";
+import React, { useMemo } from "react";
 import { ProductItem } from "../ProductItem";
 
 interface ISearchResultsProps {
@@ -11,15 +11,19 @@ interface ISearchResultsProps {
 }
 
 const SearchResults: React.FC<ISearchResultsProps> = ({ results }) => {
-  const totalPrice = results.reduce((total, currentProduct) => {
-    return total + currentProduct.price;
-  }, 0);
+  const totalPrice = useMemo(() => {
+    return results.reduce((total, currentProduct) => {
+      return total + currentProduct.price;
+    }, 0);
+  }, [results]);
 
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
   return (
     <div>
+      <h2>{totalPrice}</h2>
+
       {results.map((product) => {
         return <ProductItem product={product} />;
       })}
