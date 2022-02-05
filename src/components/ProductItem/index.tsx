@@ -20,4 +20,9 @@ const ProductItemComponent: React.FC<IProductItem> = ({ product }) => {
   );
 };
 
-export const ProductItem = memo(ProductItemComponent);
+export const ProductItem = memo(
+  ProductItemComponent,
+  (prevProps, nextProps) => {
+    return Object.is(prevProps.product, nextProps.product);
+  }
+);
