@@ -32,7 +32,13 @@ const SearchResults: React.FC<ISearchResultsProps> = ({
       <h2>{totalPrice}</h2>
 
       {results.map((product) => {
-        return <ProductItem product={product} />;
+        return (
+          <ProductItem
+            key={product.id}
+            product={product}
+            onAddToWishList={onAddToWishList}
+          />
+        );
       })}
     </div>
   );

@@ -7,15 +7,22 @@ interface IProductItem {
     price: number;
     title: string;
   };
+  onAddToWishList: (id: number) => void;
 }
 
-const ProductItemComponent: React.FC<IProductItem> = ({ product }) => {
+const ProductItemComponent: React.FC<IProductItem> = ({
+  product,
+  onAddToWishList,
+}) => {
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
   return (
     <div>
       {product.title} - <strong>{product.price}</strong>
+      <button onClick={() => onAddToWishList(product.id)}>
+        Add to wishList
+      </button>
     </div>
   );
 };
