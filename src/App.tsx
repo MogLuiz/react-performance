@@ -1,5 +1,5 @@
 // Packages
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useCallback, useState } from "react";
 
 // Components
 import SearchResults from "./components/SearchResults";
@@ -27,10 +27,9 @@ const App: React.FC = () => {
     setSearchResult(data);
   };
 
-  const addToWithList = (id: number) => {
+  const addToWithList = useCallback((id: number) => {
     console.log(id);
-  };
-
+  }, []);
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
