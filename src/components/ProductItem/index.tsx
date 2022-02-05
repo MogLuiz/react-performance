@@ -26,10 +26,15 @@ const ProductItemComponent: React.FC<IProductItem> = ({
   return (
     <div>
       {product.title} - <strong>{product.priceFormatted}</strong>
-      <AddProductToWishlist
-        onAddToWishlist={() => onAddToWishList(product.id)}
-        onRequestClose={() => setIsAddingToWishlist(false)}
-      />
+      <button onClick={() => setIsAddingToWishlist(true)}>
+        Adicionar aos favoritos
+      </button>
+      {isAddingToWishlist && (
+        <AddProductToWishlist
+          onAddToWishlist={() => onAddToWishList(product.id)}
+          onRequestClose={() => setIsAddingToWishlist(false)}
+        />
+      )}
     </div>
   );
 };
