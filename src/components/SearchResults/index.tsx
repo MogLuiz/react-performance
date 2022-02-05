@@ -8,9 +8,16 @@ interface ISearchResultsProps {
     price: number;
     title: string;
   }>;
+  onAddToWishList: (id: number) => void;
 }
 
-const SearchResults: React.FC<ISearchResultsProps> = ({ results }) => {
+const SearchResults: React.FC<ISearchResultsProps> = ({
+  results,
+  onAddToWishList,
+}) => {
+  // -------------------------------------------------
+  // Hooks
+  // -------------------------------------------------
   const totalPrice = useMemo(() => {
     return results.reduce((total, currentProduct) => {
       return total + currentProduct.price;

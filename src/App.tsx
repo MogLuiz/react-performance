@@ -27,6 +27,10 @@ const App: React.FC = () => {
     setSearchResult(data);
   };
 
+  const addToWithList = (id: number) => {
+    console.log(id);
+  };
+
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
@@ -42,7 +46,7 @@ const App: React.FC = () => {
         />
       </form>
 
-      <SearchResults results={searchResult} />
+      <SearchResults results={searchResult} onAddToWishList={addToWithList} />
     </div>
   );
 };
