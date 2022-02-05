@@ -1,5 +1,6 @@
 // Packages
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
+import AddProductToWishlist from "../AddProductToWishlist";
 
 interface IProductItem {
   product: {
@@ -16,14 +17,19 @@ const ProductItemComponent: React.FC<IProductItem> = ({
   onAddToWishList,
 }) => {
   // -------------------------------------------------
+  // State
+  // -------------------------------------------------
+  const [isAddingToWishlist, setIsAddingToWishlist] = useState(false);
+  // -------------------------------------------------
   // Render
   // -------------------------------------------------
   return (
     <div>
       {product.title} - <strong>{product.priceFormatted}</strong>
-      <button onClick={() => onAddToWishList(product.id)}>
-        Add to wishList
-      </button>
+      <AddProductToWishlist
+        onAddToWishlist={() => onAddToWishList(product.id)}
+        onRequestClose={() => setIsAddingToWishlist(false)}
+      />
     </div>
   );
 };
