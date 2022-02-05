@@ -1,5 +1,7 @@
 // Packages
 import React, { FormEvent, useState } from "react";
+
+// Components
 import SearchResults from "./components/SearchResults";
 
 const App: React.FC = () => {
@@ -40,7 +42,7 @@ const App: React.FC = () => {
         />
       </form>
 
-      <SearchResults results={searchResult}/>
+      <SearchResults results={searchResult} />
     </div>
   );
 };

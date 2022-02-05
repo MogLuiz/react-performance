@@ -1,5 +1,5 @@
 // Packages
-import React from "react";
+import React, { memo } from "react";
 
 interface IProductItem {
   product: {
@@ -9,7 +9,7 @@ interface IProductItem {
   };
 }
 
-const ProductItem: React.FC<IProductItem> = ({ product }) => {
+const ProductItemComponent: React.FC<IProductItem> = ({ product }) => {
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
@@ -20,4 +20,4 @@ const ProductItem: React.FC<IProductItem> = ({ product }) => {
   );
 };
 
-export default ProductItem;
+export const ProductItem = memo(ProductItemComponent);
