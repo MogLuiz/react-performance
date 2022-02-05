@@ -32,11 +32,25 @@ const App: React.FC = () => {
     const response = await fetch(`http://localhost:3333/products?q=${search}`);
     const data = await response.json();
 
+    const formatter = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+
+    const products = data.map((product: any) => {
+      return {
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        priceFormatted: formatter.format(product.price),
+      };
+    });
+
     const totalPrice = data.reduce((total: any, product: any) => {
       return total + product.price;
     }, 0);
 
-    setSearchResult({ totalPrice, data });
+    setSearchResult({ totalPrice, data: products });
   };
 
   const addToWithList = useCallback((id: number) => {

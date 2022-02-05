@@ -1,5 +1,5 @@
 // Packages
-import React, { useMemo } from "react";
+import React from "react";
 import { ProductItem } from "../ProductItem";
 
 interface ISearchResultsProps {
@@ -8,6 +8,7 @@ interface ISearchResultsProps {
     id: number;
     price: number;
     title: string;
+    priceFormatted: string;
   }>;
   onAddToWishList: (id: number) => void;
 }
