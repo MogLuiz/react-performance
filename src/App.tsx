@@ -4,13 +4,21 @@ import React, { FormEvent, useCallback, useState } from "react";
 // Components
 import SearchResults from "./components/SearchResults";
 
+type results = {
+  totalPrice: number;
+  data: any[];
+};
+
 const App: React.FC = () => {
   // -------------------------------------------------
   // State
   // -------------------------------------------------
 
   const [search, setSearch] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
+  const [searchResult, setSearchResult] = useState<results>({
+    totalPrice: 0,
+    data: [],
+  });
 
   // -------------------------------------------------
   // Functions
@@ -24,7 +32,11 @@ const App: React.FC = () => {
     const response = await fetch(`http://localhost:3333/products?q=${search}`);
     const data = await response.json();
 
-    setSearchResult(data);
+    const totalPrice = data.reduce((total: any, product: any) => {
+      return total + product.price;
+    }, 0);
+
+    setSearchResult({ totalPrice, data });
   };
 
   const addToWithList = useCallback((id: number) => {
@@ -45,7 +57,11 @@ const App: React.FC = () => {
         />
       </form>
 
-      <SearchResults results={searchResult} onAddToWishList={addToWithList} />
+      <SearchResults
+        results={searchResult.data}
+        totalPrice={searchResult.totalPrice}
+        onAddToWishList={addToWithList}
+      />
     </div>
   );
 };

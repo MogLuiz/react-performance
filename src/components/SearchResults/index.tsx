@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 import { ProductItem } from "../ProductItem";
 
 interface ISearchResultsProps {
+  totalPrice: number;
   results: Array<{
     id: number;
     price: number;
@@ -14,15 +15,11 @@ interface ISearchResultsProps {
 const SearchResults: React.FC<ISearchResultsProps> = ({
   results,
   onAddToWishList,
+  totalPrice,
 }) => {
   // -------------------------------------------------
   // Hooks
   // -------------------------------------------------
-  const totalPrice = useMemo(() => {
-    return results.reduce((total, currentProduct) => {
-      return total + currentProduct.price;
-    }, 0);
-  }, [results]);
 
   // -------------------------------------------------
   // Render
