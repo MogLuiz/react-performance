@@ -11,6 +11,10 @@ interface ISearchResultsProps {
 }
 
 const SearchResults: React.FC<ISearchResultsProps> = ({ results }) => {
+  const totalPrice = results.reduce((total, currentProduct) => {
+    return total + currentProduct.price;
+  }, 0);
+
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
