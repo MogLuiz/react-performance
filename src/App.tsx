@@ -4,10 +4,21 @@ import React, { FormEvent, useCallback, useState } from "react";
 // Components
 import SearchResults from "./components/SearchResults";
 
+interface IDataProduct {
+  id: number;
+  title: string;
+  price: number;
+  priceFormatted: string;
+}
 type results = {
   totalPrice: number;
-  data: any[];
+  data: IDataProduct[];
 };
+interface IProduct {
+  id: number;
+  title: string;
+  price: number;
+}
 
 const App: React.FC = () => {
   // -------------------------------------------------
@@ -37,7 +48,7 @@ const App: React.FC = () => {
       currency: "BRL",
     });
 
-    const products = data.map((product: any) => {
+    const products = data.map((product: IProduct) => {
       return {
         id: product.id,
         title: product.title,
@@ -46,7 +57,7 @@ const App: React.FC = () => {
       };
     });
 
-    const totalPrice = data.reduce((total: any, product: any) => {
+    const totalPrice = data.reduce((total: number, product: IProduct) => {
       return total + product.price;
     }, 0);
 
