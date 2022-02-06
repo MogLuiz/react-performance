@@ -1,5 +1,10 @@
 // Packages
 import React from "react";
+
+// Utils
+import { List } from "react-virtualized";
+
+// Components
 import { ProductItem } from "../ProductItem";
 
 interface ISearchResultsProps {

@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-virtualized": "^9.21.16",
     "json-server": "^0.17.0"
   }
 }
