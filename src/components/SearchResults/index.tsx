@@ -2,7 +2,7 @@
 import React from "react";
 
 // Utils
-import { List } from "react-virtualized";
+import { List, ListRowRenderer } from "react-virtualized";
 
 // Components
 import { ProductItem } from "../ProductItem";
@@ -23,6 +23,17 @@ const SearchResults: React.FC<ISearchResultsProps> = ({
   onAddToWishList,
   totalPrice,
 }) => {
+  const rowRenderer: ListRowRenderer = ({ index, key, style }) => {
+    return (
+      <div key={key} style={style}>
+        <ProductItem
+          product={results[index]}
+          onAddToWishList={onAddToWishList}
+        />
+      </div>
+    );
+  };
+
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
@@ -30,13 +41,14 @@ const SearchResults: React.FC<ISearchResultsProps> = ({
     <div>
       <h2>{totalPrice}</h2>
 
-      {results.map((product) => {
-        return (
-          <div key={product.id}>
-            <ProductItem product={product} onAddToWishList={onAddToWishList} />
-          </div>
-        );
-      })}
+      <List
+        height={300}
+        rowHeight={30}
+        width={900}
+        overscanRowCount={5}
+        rowCount={results.length}
+        rowRenderer={rowRenderer}
+      />
     </div>
   );
 };
