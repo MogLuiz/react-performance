@@ -1,6 +1,5 @@
 // Packages
 import React, { lazy, memo, Suspense, useState } from "react";
-// import AddProductToWishlist from "../AddProductToWishlist";
 
 const AddProductToWishlist = lazy(() => {
   return import("../AddProductToWishlist");

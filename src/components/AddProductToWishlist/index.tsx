@@ -1,7 +1,7 @@
 // Packages
 import React from "react";
 
-interface IAddProductToWishlistProps {
+export interface IAddProductToWishlistProps {
   onAddToWishlist: () => void;
   onRequestClose: () => void;
 }
