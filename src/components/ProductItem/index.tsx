@@ -1,6 +1,10 @@
 // Packages
-import React, { memo, useState } from "react";
-import AddProductToWishlist from "../AddProductToWishlist";
+import React, { lazy, memo, Suspense, useState } from "react";
+// import AddProductToWishlist from "../AddProductToWishlist";
+
+const AddProductToWishlist = lazy(() => {
+  return import("../AddProductToWishlist");
+});
 
 interface IProductItem {
   product: {
@@ -30,10 +34,12 @@ const ProductItemComponent: React.FC<IProductItem> = ({
         Adicionar aos favoritos
       </button>
       {isAddingToWishlist && (
-        <AddProductToWishlist
-          onAddToWishlist={() => onAddToWishList(product.id)}
-          onRequestClose={() => setIsAddingToWishlist(false)}
-        />
+        <Suspense fallback={<span>Carregando...</span>}>
+          <AddProductToWishlist
+            onAddToWishlist={() => onAddToWishList(product.id)}
+            onRequestClose={() => setIsAddingToWishlist(false)}
+          />
+        </Suspense>
       )}
     </div>
   );

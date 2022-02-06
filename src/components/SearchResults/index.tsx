@@ -3,13 +3,13 @@ import React from "react";
 import { ProductItem } from "../ProductItem";
 
 interface ISearchResultsProps {
-  totalPrice: number;
   results: Array<{
     id: number;
     price: number;
     title: string;
     priceFormatted: string;
   }>;
+  totalPrice: number;
   onAddToWishList: (id: number) => void;
 }
 
@@ -27,11 +27,9 @@ const SearchResults: React.FC<ISearchResultsProps> = ({
 
       {results.map((product) => {
         return (
-          <ProductItem
-            key={product.id}
-            product={product}
-            onAddToWishList={onAddToWishList}
-          />
+          <div key={product.id}>
+            <ProductItem product={product} onAddToWishList={onAddToWishList} />
+          </div>
         );
       })}
     </div>
