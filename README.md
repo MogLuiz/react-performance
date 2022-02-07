@@ -11,8 +11,7 @@
 <p align="center">
    <a href="#dart-objetivo">Objetivo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#books-tópicos">Tópicos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rocket-executando-o-projeto">Executando o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#muscle-status-do-projeto">Status do Projeto</a>
+  <a href="#rocket-executando-o-projeto">Executando o Projeto</a>
 </p>
 
 
@@ -33,3 +32,22 @@
 -   [x] [Bundle Analyzer](https://create-react-app.dev/docs/analyzing-the-bundle-size/)
 -   [x] [Fluxo de Renderização](/)
 -   [x] [Performação de Aplicações React](/)
+
+
+## :rocket: Executando o Projeto
+
+To clone and run this application, you'll need [Git][git], [Node.js v14.15.0][nodejs] or higher + [Yarn v1.22][yarn] or higher installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/MogLuiz/react-performance.git
+
+# Go into the repository
+$ cd react-performance
+
+# Install dependencies
+$ yarn install
+
+# Run the app
+$ yarn start
+```
