@@ -14,3 +14,10 @@
   <a href="#rocket-executando-o-projeto">Executando o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#muscle-status-do-projeto">Status do Projeto</a>
 </p>
+
+
+## :dart: Objetivo
+
+<p>
+   Esse é um mini-projeto voltado a estudos de performance e otimizações em projetos ReactJS.
+</p>
