@@ -10,7 +10,7 @@
 
 <p align="center">
    <a href="#dart-objetivo">Objetivo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#hammer_and_wrench-ferramentas">Ferramentas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#books-tópicos">Tópicos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-executando-o-projeto">Executando o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#muscle-status-do-projeto">Status do Projeto</a>
 </p>
@@ -21,3 +21,15 @@
 <p>
    Esse é um mini-projeto voltado a estudos de performance e otimizações em projetos ReactJS.
 </p>
+
+
+## :books: Tópicos
+
+-   [x] [Algoritmo de Reconciliação React](https://pt-br.reactjs.org/docs/reconciliation.html)
+-   [x] [Code Splitting](https://pt-br.reactjs.org/docs/code-splitting.html)
+-   [x] [Lazy Loading](https://blog.logrocket.com/lazy-loading-components-in-react-16-6-6cea535c0b52/)
+-   [x] [React Suspense](https://pt-br.reactjs.org/docs/concurrent-mode-suspense.html)
+-   [x] [Virtualização](https://br.atsit.in/archives/89814)
+-   [x] [Bundle Analyzer](https://create-react-app.dev/docs/analyzing-the-bundle-size/)
+-   [x] [Fluxo de Renderização](/)
+-   [x] [Performação de Aplicações React](/)
